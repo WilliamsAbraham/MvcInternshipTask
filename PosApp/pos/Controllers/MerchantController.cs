@@ -10,9 +10,17 @@ namespace pos.Controllers
     public class MerchantController : Controller
     {
         // GET: Merchant
-        public ActionResult Index()
+        public ActionResult MerchantIndex()
         {
-            return View();
+            List<MerchantDetails> merchant = new List<MerchantDetails>();
+            merchant.Add(new MerchantDetails
+            {
+                Name = "LIZPEE BLOBAL RESOURCES",
+                Address = "NO. 174 NTA/MBUARA RD, PORTHARCOURT",
+                TerminalId = "23011845"
+
+            });
+            return View(merchant);
         }
 
         // GET: Merchant/Details/5
@@ -20,11 +28,9 @@ namespace pos.Controllers
         {
             MerchantDetails merchant = new MerchantDetails
             {
-                Name ="hhhhh",
-                Address = "kdkfdkf",
-                Authors = new List<string> { "kkakxak","xbakxbakb"},
-                MerchantId = 1,
-                TerminalId = "knsncs"
+                Name ="LIZPEE BLOBAL RESOURCES",
+                Address = "NO. 174 NTA/MBUARA RD, PORTHARCOURT",
+                TerminalId = "23011845"
 
             };
             return View(merchant);

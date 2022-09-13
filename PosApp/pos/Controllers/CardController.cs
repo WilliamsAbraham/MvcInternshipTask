@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +10,37 @@ namespace pos.Controllers
     public class CardController : Controller
     {
         // GET: Card
-        public ActionResult Index()
+        public ActionResult CardIndex()
         {
-            return View();
+            List<CardDetails> card = new List<CardDetails>();
+            card.Add(new CardDetails
+            {
+                CardType = "Debit Mastercard",
+                Cardnumber = "539941******3369",
+                IssuerLocation = "369/GLOBAL ACCELEREX",
+                ExpiryDate = DateTime.Now,
+                AuthorizationCode = "0000",
+                CvnType = "OFFLINE CVM"
+
+            });
+            return View(card);
+            
         }
 
         // GET: Card/Details/5
-        public ActionResult CardDetails(int id)
+        public ActionResult CardDetails()
         {
-            return View();
+            CardDetails card = new CardDetails
+            {
+                CardType = "Debit Mastercard",
+                Cardnumber = "539941******3369",
+                IssuerLocation = "369/GLOBAL ACCELEREX",
+                ExpiryDate = DateTime.Now,
+                AuthorizationCode ="0000",
+                CvnType = "OFFLINE CVM"
+                
+            };
+            return View(card);
         }
 
         // GET: Card/Create

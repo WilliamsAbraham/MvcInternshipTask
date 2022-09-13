@@ -167,13 +167,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Merchant\MerchantDetails.cshtml" />
+    <Content Include="Views\Transaction\TransactionDetails.cshtml" />
     <Content Include="Views\Purchase\PurchaseDetails.cshtml" />
+    <Content Include="Views\Merchant\MerchantDetails.cshtml" />
+    <Content Include="Views\Card\CardDetails.cshtml" />
+    <Content Include="Views\Transaction\TransactionDeclinedDetails.cshtml" />
+    <Content Include="Views\Merchant\MerchantIndex.cshtml" />
+    <Content Include="Views\Card\CardIndex.cshtml" />
+    <Content Include="Views\Purchase\PurchaseIndex.cshtml" />
+    <Content Include="Views\Transaction\TransactionIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Card\" />
-    <Folder Include="Views\Transaction\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

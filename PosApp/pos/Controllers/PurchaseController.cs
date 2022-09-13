@@ -10,9 +10,16 @@ namespace pos.Controllers
     public class PurchaseController : Controller
     {
         // GET: Purchase
-        public ActionResult Index()
+        public ActionResult PurchaseIndex()
         {
-            return View();
+            List<PurchaseDetails> purchase = new List<PurchaseDetails>();
+            purchase.Add(new PurchaseDetails
+            {
+                Date = DateTime.Now,
+                Stan = "003862",
+                Amount = 0.01
+            });
+            return View(purchase);
         }
 
         // GET: Purchase/Details/5
@@ -20,10 +27,9 @@ namespace pos.Controllers
         {
             PurchaseDetails purchase = new PurchaseDetails
             {
-                PurchaseId = 1,
-                date = DateTime.Now,
-                Stan = "ggtt5",
-                Amount = 33
+                Date = DateTime.Now,
+                Stan = "003862",
+                Amount = 0.01
             };
 
             return View(purchase);

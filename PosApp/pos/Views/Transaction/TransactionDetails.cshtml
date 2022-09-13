@@ -1,0 +1,50 @@
+﻿@model PosApp.Models.TransactionDetails
+@{
+    Layout = "";
+}
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <p>
+            <h2>Transaction Successful</h2>
+        </p>
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponseCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponseCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rrn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rrn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ptad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ptad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

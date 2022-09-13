@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +10,36 @@ namespace pos.Controllers
     public class TransactionController : Controller
     {
         // GET: Transaction
-        public ActionResult Index()
+        public ActionResult TransactionIndex()
         {
-            return View();
+            List<TransactionDetails> transaction = new List<TransactionDetails>();
+            transaction.Add(new TransactionDetails
+            {
+                ResponseCode = 91,
+                Aid = "A000000000041010",
+                Rrn = "000210002450 Accelerex 2.2. 0-090921-LINT",
+                Ptad = "Global Accelerex"
+            }); 
+            return View(transaction);
         }
 
         // GET: Transaction/Details/5
-        public ActionResult TransactionDetails(int id)
+        public ActionResult TransactionDetails()
         {
-            return View();
+            TransactionDetails transaction = new TransactionDetails
+            {
+                ResponseCode = 91,
+                Aid = "A000000000041010",
+                Rrn = "000210002450 Accelerex 2.2. 0-090921-LINT",
+                Ptad =  "Global Accelerex"
+            };
+            if(transaction.ResponseCode == 91)
+            {
+                return View("TransactionDeclinedDetails", transaction);
+
+            }
+            else
+                return View(transaction);
         }
 
         // GET: Transaction/Create

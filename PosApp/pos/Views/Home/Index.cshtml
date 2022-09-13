@@ -4,9 +4,14 @@
 
 <div class="row">
 
+    @{ 
+        Html.RenderAction("MerchantDetails", "Merchant");
+        Html.RenderAction("PurchaseDetails", "Purchase");
+        Html.RenderAction("CardDetails", "Card");
+        Html.RenderAction("TransactionDetails", "Transaction");
 
-    @Html.Action("MerchantDetails", "Merchant")
-    @Html.Action("PurchaseDetails", "Purchase")
+    }
+    
 
 
 
@@ -17,22 +22,22 @@
         <div class="col-md-3">
             <h2>Merchants</h2>
 
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <p><a class="btn btn-default" href="@Url.Action("Merchantindex", "Merchant")">Learn more &raquo;</a></p>
         </div>
         <div class="col-md-3">
             <h2>Cards</h2>
 
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            <p><a class="btn btn-default" href="@Url.Action("CardIndex", "Card")">Learn more &raquo;</a></p>
         </div>
         <div class="col-md-3">
             <h2>Transactions</h2>
 
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <p><a class="btn btn-default" href="@Url.Action("TransactionIndex", "Transaction")">Learn more &raquo;</a></p>
         </div>
         <div class="col-md-3">
             <h2>Purchases</h2>
 
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <p><a class="btn btn-default" href="@Url.Action("PurchaseIndex", "Purchase")">Learn more &raquo;</a></p>
         </div>
     </div>
 
