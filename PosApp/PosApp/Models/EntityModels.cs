@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PosApp.Models
 {
     public class MerchantDetails
     {
-        public int Id { get; set; }
+        public int MerchantId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string  TerminalId { get; set; }
+        public List<string> Authors { get; set; }
     }
 
     public class PurchaseDetails
@@ -37,6 +39,5 @@ namespace PosApp.Models
         public string Ptad { get; set; }
 
     }
-
 
 }
