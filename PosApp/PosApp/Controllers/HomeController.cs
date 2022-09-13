@@ -18,52 +18,23 @@ namespace PosApp.Controllers
         {
             _logger = logger;
         }
-
-
-        private List<MerchantDetails> GetMerchantDetails()
-        {
-            List<MerchantDetails> merchantDetails = new List<MerchantDetails>();
-            merchantDetails.Add(new MerchantDetails { Address = "abcd", MerchantId = 1, Name = "asdd", TerminalId = "assddd" });
-            return merchantDetails;
-        }
         
         public IActionResult Index()
         {
-            MerchantDetails mymodel = new MerchantDetails();
 
-            mymodel chantDetails();
-            return View(mymodel);
+            return View();
+
+            
             
         }
 
-        public PartialViewResult RenderMerchantDetails ()
+        public IActionResult RenderMachant()
         {
-            MerchantDetails merchantDetails = new MerchantDetails
-            {
-                Address = "adad",
-                MerchantId = 1,
-                Name ="aaddad",
-                TerminalId ="sfdfdf",
-              
-            };
-            return PartialView(merchantDetails);
-        }
-        [HttpGet]
-        public PartialViewResult RenderPurchaseDetails()
-        {
-            return PartialView();
-        }
 
-        public PartialViewResult RenderCardDetails()
-        {
-            return PartialView();
-        }
 
-        public PartialViewResult RenderTransactionDetails()
-        {
-            return PartialView();
+            return View();
         }
-
+         
       
         public IActionResult Privacy()
         {
