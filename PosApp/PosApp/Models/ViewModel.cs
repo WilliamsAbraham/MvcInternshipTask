@@ -4,6 +4,6 @@ namespace PosApp.Models
 {
     public class ViewModel
     {
-        public IEnumerable<MerchantDetails> Merchants{ get; set; }
+        public MerchantDetails Merchants{ get; set; }
     }
 }
