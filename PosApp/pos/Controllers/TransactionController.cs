@@ -1,4 +1,5 @@
-﻿using PosApp.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using PosApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace pos.Controllers
         {
             TransactionDetails transaction = new TransactionDetails
             {
+               Id = 1,
                 ResponseCode = 91,
                 Aid = "A000000000041010",
                 Rrn = "000210002450 Accelerex 2.2. 0-090921-LINT",
@@ -43,27 +45,27 @@ namespace pos.Controllers
         }
 
         // GET: Transaction/Create
-        public ActionResult CreateTransaction()
+        public IActionResult CreateTransaction()
         {
-            return View();
+            return (IActionResult)View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TransactionDetails transaction)
+        public IActionResult Create(TransactionDetails transaction)
         {
             if (ModelState.IsValid)
             {
                 // Logic to add the book to DB
-                return RedirectToAction("TransactiomIndex");
+                return (IActionResult)RedirectToAction("TransactiomIndex");
             }
-            return View(transaction);
+            return (IActionResult)View(transaction);
         }
 
         // GET: Transaction/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditTransaction(int id)
         {
-            return View();
+            return View(id);
         }
 
         // POST: Transaction/Edit/5

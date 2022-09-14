@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PosApp.Models.TransactionDetails>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateTransaction")
 </p>
 <p>
     @Html.ActionLink("Back", "Index", "Home",null,null)
@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.Ptad)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Edit", "EditTransaction", new { id=item.Id }) |
            
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
