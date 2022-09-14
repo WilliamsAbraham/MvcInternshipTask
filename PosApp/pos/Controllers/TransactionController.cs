@@ -10,6 +10,15 @@ namespace pos.Controllers
 {
     public class TransactionController : Controller
     {
+        private protected TransactionDetails _transactionDetails;
+
+        public TransactionController()
+        {
+            TransactionDetails transaction = new TransactionDetails();
+
+            _transactionDetails = transaction;
+            
+        }
         // GET: Transaction
         public ActionResult TransactionIndex()
         {
@@ -47,25 +56,30 @@ namespace pos.Controllers
         // GET: Transaction/Create
         public ActionResult CreateTransaction()
         {
-            return View();
+            return View(_transactionDetails);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TransactionDetails transaction)
         {
-            if (ModelState.IsValid)
+            try
             {
-                // Logic to add the book to DB
-                return RedirectToAction("TransactiomIndex");
+                // TODO: Add update logic here
+
+                return RedirectToAction("TransactionIndex");
             }
-            return View(transaction);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Transaction/Edit/5
-        public ActionResult EditTransaction(int id)
+        public ActionResult EditTransaction(string id)
         {
-            return View(id);
+
+            return View(_transactionDetails);
         }
 
         // POST: Transaction/Edit/5
@@ -76,7 +90,7 @@ namespace pos.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("TransactionIndex");
             }
             catch
             {
@@ -85,9 +99,9 @@ namespace pos.Controllers
         }
 
         // GET: Transaction/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteTransaction()
         {
-            return View();
+            return View(_transactionDetails);
         }
 
         // POST: Transaction/Delete/5
@@ -98,7 +112,7 @@ namespace pos.Controllers
             {
                 // TODO: Add delete logic here
 
-                return RedirectToAction("TransactionIdex");
+                return RedirectToAction("TransactionIndex");
             }
             catch
             {

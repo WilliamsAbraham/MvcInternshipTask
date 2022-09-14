@@ -212,6 +212,16 @@
     <Content Include="Views\Transaction\TransactionIndex.cshtml" />
     <Content Include="Views\Transaction\CreateTransaction.cshtml" />
     <Content Include="Views\Transaction\EditTransaction.cshtml" />
+    <Content Include="Views\Transaction\DeleteTransaction.cshtml" />
+    <Content Include="Views\Card\CreateCard.cshtml" />
+    <Content Include="Views\Card\EditCard.cshtml" />
+    <Content Include="Views\Card\DeleteCard.cshtml" />
+    <Content Include="Views\Merchant\CreateMerchant.cshtml" />
+    <Content Include="Views\Merchant\EditMerchant.cshtml" />
+    <Content Include="Views\Merchant\DeleteMerchant.cshtml" />
+    <Content Include="Views\Purchase\CreatePurchase.cshtml" />
+    <Content Include="Views\Purchase\EditPurchase.cshtml" />
+    <Content Include="Views\Purchase\DeletePurchase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

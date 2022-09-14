@@ -9,6 +9,13 @@ namespace pos.Controllers
 {
     public class CardController : Controller
     {
+        private protected CardDetails _card;
+        public CardController()
+        {
+            CardDetails card = new CardDetails();
+            _card = card;
+
+        }
         // GET: Card
         public ActionResult CardIndex()
         {
@@ -44,20 +51,20 @@ namespace pos.Controllers
         }
 
         // GET: Card/Create
-        public ActionResult Create()
+        public ActionResult CreateCard()
         {
-            return View();
+            return View(_card);
         }
 
         // POST: Card/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CardDetails cardDetails)
         {
             try
             {
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("CardIndex");
             }
             catch
             {
@@ -66,9 +73,9 @@ namespace pos.Controllers
         }
 
         // GET: Card/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditCard(int id)
         {
-            return View();
+            return View(_card);
         }
 
         // POST: Card/Edit/5
@@ -79,7 +86,7 @@ namespace pos.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("CardIndex");
             }
             catch
             {
@@ -88,9 +95,9 @@ namespace pos.Controllers
         }
 
         // GET: Card/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteCard()
         {
-            return View();
+            return View(_card);
         }
 
         // POST: Card/Delete/5
@@ -101,7 +108,7 @@ namespace pos.Controllers
             {
                 // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("CardIndex");
             }
             catch
             {

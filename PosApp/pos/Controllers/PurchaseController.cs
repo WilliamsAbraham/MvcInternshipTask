@@ -9,6 +9,12 @@ namespace pos.Controllers
 {
     public class PurchaseController : Controller
     {
+        private protected PurchaseDetails _purchaseDetails;
+        public PurchaseController()
+        {
+            PurchaseDetails purchase = new PurchaseDetails();
+            _purchaseDetails = purchase;
+        }
         // GET: Purchase
         public ActionResult PurchaseIndex()
         {
@@ -36,9 +42,9 @@ namespace pos.Controllers
         }
 
         // GET: Purchase/Create
-        public ActionResult Create()
+        public ActionResult CreatePurchase()
         {
-            return View();
+            return View(_purchaseDetails);
         }
 
         // POST: Purchase/Create
@@ -49,7 +55,7 @@ namespace pos.Controllers
             {
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("PurchaseIndex");
             }
             catch
             {
@@ -58,9 +64,9 @@ namespace pos.Controllers
         }
 
         // GET: Purchase/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditPurchase()
         {
-            return View();
+            return View(_purchaseDetails);
         }
 
         // POST: Purchase/Edit/5
@@ -71,7 +77,7 @@ namespace pos.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("PurchaseIndex");
             }
             catch
             {
@@ -80,9 +86,9 @@ namespace pos.Controllers
         }
 
         // GET: Purchase/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeletePurchase()
         {
-            return View();
+            return View(_purchaseDetails);
         }
 
         // POST: Purchase/Delete/5
@@ -93,7 +99,7 @@ namespace pos.Controllers
             {
                 // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("PurchaseIndex");
             }
             catch
             {

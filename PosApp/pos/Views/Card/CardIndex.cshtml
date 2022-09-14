@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PosApp.Models.CardDetails>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateCard")
 </p>
 <p>
     @Html.ActionLink("Back", "Index", "Home", null,null)
@@ -50,8 +50,8 @@
             @Html.DisplayFor(modelItem => item.CvnType)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "EditCard", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "DeleteCard", new { id=item.Id })
         </td>
     </tr>
 }

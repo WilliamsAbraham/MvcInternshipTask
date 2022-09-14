@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PosApp.Models.PurchaseDetails>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreatePurchase")
 </p>
 <p>
     @Html.ActionLink("Back", "Index", "Home", null,null)
@@ -32,9 +32,9 @@
             @Html.DisplayFor(modelItem => item.Amount)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Edit", "EditPurchase", new { id=item.Id }) |
            
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Delete", "DeletePurchase", new { id=item.Id })
         </td>
     </tr>
 }

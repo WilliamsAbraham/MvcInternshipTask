@@ -9,6 +9,13 @@ namespace pos.Controllers
 {
     public class MerchantController : Controller
     {
+        private protected MerchantDetails _merchantDetails;
+        public MerchantController()
+        {
+            MerchantDetails merchant = new MerchantDetails();
+            
+            _merchantDetails = merchant;
+        }
         // GET: Merchant
         public ActionResult MerchantIndex()
         {
@@ -37,9 +44,9 @@ namespace pos.Controllers
         }
 
         // GET: Merchant/Create
-        public ActionResult Create()
+        public ActionResult CreateMerchant()
         {
-            return View();
+            return View(_merchantDetails);
         }
 
         // POST: Merchant/Create
@@ -50,7 +57,7 @@ namespace pos.Controllers
             {
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("MerchantIndex");
             }
             catch
             {
@@ -59,9 +66,9 @@ namespace pos.Controllers
         }
 
         // GET: Merchant/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditMerchant()
         {
-            return View();
+            return View(_merchantDetails);
         }
 
         // POST: Merchant/Edit/5
@@ -72,7 +79,7 @@ namespace pos.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("MerchantIndex");
             }
             catch
             {
@@ -81,9 +88,9 @@ namespace pos.Controllers
         }
 
         // GET: Merchant/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteMerchant()
         {
-            return View();
+            return View(_merchantDetails);
         }
 
         // POST: Merchant/Delete/5
