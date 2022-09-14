@@ -176,6 +176,7 @@
     <Content Include="Views\Card\CardIndex.cshtml" />
     <Content Include="Views\Purchase\PurchaseIndex.cshtml" />
     <Content Include="Views\Transaction\TransactionIndex.cshtml" />
+    <Content Include="Views\Transaction\CreateTransaction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

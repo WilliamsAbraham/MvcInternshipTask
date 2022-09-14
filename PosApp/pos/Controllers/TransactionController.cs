@@ -43,25 +43,21 @@ namespace pos.Controllers
         }
 
         // GET: Transaction/Create
-        public ActionResult Create()
+        public ActionResult CreateTransaction()
         {
             return View();
         }
 
-        // POST: Transaction/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(TransactionDetails transaction)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                // Logic to add the book to DB
+                return RedirectToAction("TransactiomIndex");
             }
-            catch
-            {
-                return View();
-            }
+            return View(transaction);
         }
 
         // GET: Transaction/Edit/5
@@ -100,7 +96,7 @@ namespace pos.Controllers
             {
                 // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("TransactionIdex");
             }
             catch
             {
