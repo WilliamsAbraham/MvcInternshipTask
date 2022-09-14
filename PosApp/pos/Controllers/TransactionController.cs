@@ -45,21 +45,21 @@ namespace pos.Controllers
         }
 
         // GET: Transaction/Create
-        public IActionResult CreateTransaction()
+        public ActionResult CreateTransaction()
         {
-            return (IActionResult)View();
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(TransactionDetails transaction)
+        public ActionResult Create(TransactionDetails transaction)
         {
             if (ModelState.IsValid)
             {
                 // Logic to add the book to DB
-                return (IActionResult)RedirectToAction("TransactiomIndex");
+                return RedirectToAction("TransactiomIndex");
             }
-            return (IActionResult)View(transaction);
+            return View(transaction);
         }
 
         // GET: Transaction/Edit/5
