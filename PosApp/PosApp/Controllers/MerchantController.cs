@@ -5,31 +5,34 @@ using System.Collections.Generic;
 
 namespace PosApp.Controllers
 {
-    public class MerchantController1 : Controller
+    public class MerchantController : Controller
     {
         private protected MerchantDetails _merchantDetails;
-        public MerchantController1()
+        public MerchantController()
         {
             MerchantDetails merchant = new MerchantDetails();
 
             _merchantDetails = merchant;
         }
         // GET: MerchantController1
-        public ActionResult Index()
+        public ActionResult MerchantIndex()
         {
-            List<MerchantDetails> merchant = new List<MerchantDetails>();
-            merchant.Add(new MerchantDetails
+            
             {
-                Name = "LIZPEE BLOBAL RESOURCES",
-                Address = "NO. 174 NTA/MBUARA RD, PORTHARCOURT",
-                TerminalId = "23011845"
+                List<MerchantDetails> merchant = new List<MerchantDetails>();
+                merchant.Add(new MerchantDetails
+                {
+                    Name = "LIZPEE BLOBAL RESOURCES",
+                    Address = "NO. 174 NTA/MBUARA RD, PORTHARCOURT",
+                    TerminalId = "23011845"
 
-            });
-            return View(merchant);
+                });
+                return View(merchant);
+            }
         }
 
         // GET: MerchantController1/Details/5
-        public ActionResult Details(int id)
+        public ActionResult MerchantDetails(int id)
         {
             MerchantDetails merchant = new MerchantDetails
             {
@@ -54,7 +57,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(MerchantIndex));
             }
             catch
             {
@@ -63,9 +66,18 @@ namespace PosApp.Controllers
         }
 
         // GET: MerchantController1/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditMerchant(int id)
         {
-            return View();
+
+            MerchantDetails merchant = new MerchantDetails
+            {
+                Name = "LIZPEE BLOBAL RESOURCES",
+                Address = "NO. 174 NTA/MBUARA RD, PORTHARCOURT",
+                TerminalId = "23011845"
+
+            };
+            return View(merchant);
+           
         }
 
         // POST: MerchantController1/Edit/5
@@ -75,7 +87,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(MerchantIndex));
             }
             catch
             {
@@ -96,7 +108,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(MerchantIndex));
             }
             catch
             {

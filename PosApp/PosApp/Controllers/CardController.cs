@@ -6,16 +6,16 @@ using System.Collections.Generic;
 
 namespace PosApp.Controllers
 {
-    public class CardController1 : Controller
+    public class CardController : Controller
     {
         private protected CardDetails _cardDetails;
-        public CardController1()
+        public CardController()
         {
             CardDetails card = new CardDetails();
             _cardDetails = card;
         }
         // GET: CardController1
-        public ActionResult Index()
+        public ActionResult CardIndex()
         {
             List<CardDetails> card = new List<CardDetails>();
             card.Add(new CardDetails
@@ -32,7 +32,7 @@ namespace PosApp.Controllers
         }
 
         // GET: CardController1/Details/5
-        public ActionResult Details()
+        public ActionResult CardDetails()
         {
             CardDetails card = new CardDetails
             {
@@ -60,7 +60,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(CardIndex));
             }
             catch
             {
@@ -69,9 +69,19 @@ namespace PosApp.Controllers
         }
 
         // GET: CardController1/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditCard()
         {
-            return View();
+            CardDetails card = new CardDetails
+            {
+                CardType = "Debit Mastercard",
+                Cardnumber = "539941******3369",
+                IssuerLocation = "369/GLOBAL ACCELEREX",
+                ExpiryDate = DateTime.Now,
+                AuthorizationCode = "0000",
+                CvnType = "OFFLINE CVM"
+
+            };
+            return View(card);
         }
 
         // POST: CardController1/Edit/5
@@ -81,7 +91,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(CardIndex));
             }
             catch
             {
@@ -102,7 +112,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(CardIndex));
             }
             catch
             {

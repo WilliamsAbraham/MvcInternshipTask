@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PosApp.Models.CardDetails>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CardType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cardnumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuerLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpiryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorizationCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CvnType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cardnumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuerLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpiryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorizationCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CvnType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditCard", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "CardDetails", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -6,16 +6,16 @@ using System.Collections.Generic;
 
 namespace PosApp.Controllers
 {
-    public class PurchaseController1 : Controller
+    public class PurchaseController : Controller
     {
         private protected PurchaseDetails _purchaseDetails;
-        public PurchaseController1()
+        public PurchaseController()
         {
             PurchaseDetails purchase = new PurchaseDetails();
             _purchaseDetails = purchase;
         }
         // GET: PurchaseController1
-        public ActionResult Index()
+        public ActionResult PurchaseIndex()
         {
             List<PurchaseDetails> purchase = new List<PurchaseDetails>();
             purchase.Add(new PurchaseDetails
@@ -28,7 +28,7 @@ namespace PosApp.Controllers
         }
 
             // GET: PurchaseController1/Details/5
-        public ActionResult Details(int id)
+        public ActionResult PurchaseDetails(int id)
         {
             PurchaseDetails purchase = new PurchaseDetails
             {
@@ -53,7 +53,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(PurchaseIndex));
             }
             catch
             {
@@ -62,9 +62,16 @@ namespace PosApp.Controllers
         }
 
         // GET: PurchaseController1/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditPurchase(int id)
         {
-            return View();
+            PurchaseDetails purchase = new PurchaseDetails
+            {
+                Date = DateTime.Now,
+                Stan = "003862",
+                Amount = 0.01
+            };
+
+            return View(purchase);
         }
 
         // POST: PurchaseController1/Edit/5
@@ -74,7 +81,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(PurchaseIndex));
             }
             catch
             {
@@ -95,7 +102,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(PurchaseIndex));
             }
             catch
             {

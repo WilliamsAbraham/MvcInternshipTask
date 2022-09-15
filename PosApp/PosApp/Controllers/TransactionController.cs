@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 namespace PosApp.Controllers
 {
-    public class TransactionController1 : Controller
+    public class TransactionController : Controller
     {
         private protected TransactionDetails _transactionDetails;
-        public TransactionController1()
+        public TransactionController()
         {
             TransactionDetails transaction = new TransactionDetails();
 
             _transactionDetails = transaction;
         }
         // GET: TransactionController1
-        public ActionResult Index()
+        public ActionResult TransactionIndex()
         {
             List<TransactionDetails> transaction = new List<TransactionDetails>();
             transaction.Add(new TransactionDetails
@@ -29,7 +29,7 @@ namespace PosApp.Controllers
         }
 
         // GET: TransactionController1/Details/5
-        public ActionResult Details()
+        public ActionResult TransactionDetails()
         {
             TransactionDetails transaction = new TransactionDetails
             {
@@ -61,7 +61,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(TransactionIndex));
             }
             catch
             {
@@ -70,9 +70,17 @@ namespace PosApp.Controllers
         }
 
         // GET: TransactionController1/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditTransaction(int id)
         {
-            return View();
+            TransactionDetails transaction = new TransactionDetails
+            {
+                Id = 1,
+                ResponseCode = 91,
+                Aid = "A000000000041010",
+                Rrn = "000210002450 Accelerex 2.2. 0-090921-LINT",
+                Ptad = "Global Accelerex"
+            };
+            return View(transaction);
         }
 
         // POST: TransactionController1/Edit/5
@@ -82,7 +90,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(TransactionIndex));
             }
             catch
             {
@@ -103,7 +111,7 @@ namespace PosApp.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(TransactionIndex));
             }
             catch
             {

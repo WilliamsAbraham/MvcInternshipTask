@@ -1,0 +1,44 @@
+﻿@model PosApp.Models.TransactionDetails
+
+<h4>TransactionDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditTransaction">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResponseCode" class="control-label"></label>
+                <input asp-for="ResponseCode" class="form-control" />
+                <span asp-validation-for="ResponseCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aid" class="control-label"></label>
+                <input asp-for="Aid" class="form-control" />
+                <span asp-validation-for="Aid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rrn" class="control-label"></label>
+                <input asp-for="Rrn" class="form-control" />
+                <span asp-validation-for="Rrn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ptad" class="control-label"></label>
+                <input asp-for="Ptad" class="form-control" />
+                <span asp-validation-for="Ptad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="TransactionIndex">Back to List</a>
+</div>
+
